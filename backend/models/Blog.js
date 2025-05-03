@@ -7,13 +7,6 @@ const blogSchema = new mongoose.Schema({
   created_Date: { type: Date, default: Date.now },
   status: { type: Number, default: 1 }, // 1 = Active, 0 = Soft Deleted
   tags: [{ type: String }],
-  image: { type: String },
-  comments: [
-    {
-      comment: { type: String, required: true },
-      commentedAt: { type: Date, default: Date.now },
-    },
-  ],
 });
 
 module.exports = mongoose.model("Blog", blogSchema);
