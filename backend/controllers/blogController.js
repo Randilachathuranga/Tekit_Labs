@@ -3,8 +3,8 @@ const Blog = require("../models/Blog");
 // Create a new blog
 exports.createBlog = async (req, res) => {
   try {
-    const { title, content, category, tags, image } = req.body;
-    const blog = new Blog({ title, content, category, tags, image });
+    const { title, content, category, tags } = req.body;
+    const blog = new Blog({ title, content, category, tags });
     await blog.save();
     res.status(201).json(blog);
   } catch (error) {
@@ -38,10 +38,10 @@ exports.getBlogById = async (req, res) => {
 // Update a blog
 exports.updateBlog = async (req, res) => {
   try {
-    const { title, content, category, tags, image } = req.body;
+    const { title, content, category, tags } = req.body;
     const blog = await Blog.findByIdAndUpdate(
       req.params.id,
-      { title, content, category, tags, image },
+      { title, content, category, tags },
       { new: true }
     );
     if (!blog || blog.status === 0)
@@ -82,42 +82,42 @@ exports.permanentDeleteBlog = async (req, res) => {
 };
 
 // Delete a specific comment from a blog
-exports.deleteComment = async (req, res) => {
-  try {
-    const { blogId, commentId } = req.params;
-    const blog = await Blog.findById(blogId);
+// exports.deleteComment = async (req, res) => {
+//   try {
+//     const { blogId, commentId } = req.params;
+//     const blog = await Blog.findById(blogId);
 
-    if (!blog || blog.status === 0)
-      return res.status(404).json({ message: "Blog not found" });
+//     if (!blog || blog.status === 0)
+//       return res.status(404).json({ message: "Blog not found" });
 
-    // Filter out the comment with the given commentId
-    blog.comments = blog.comments.filter(
-      (comment) => comment._id.toString() !== commentId
-    );
+//     // Filter out the comment with the given commentId
+//     blog.comments = blog.comments.filter(
+//       (comment) => comment._id.toString() !== commentId
+//     );
 
-    await blog.save();
-    res.json({ message: "Comment deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+//     await blog.save();
+//     res.json({ message: "Comment deleted successfully" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 // create comments
-exports.createComment = async (req, res) => {
-  try {
-    const { comment } = req.body;
-    const blogId = req.params.blogId;
+// exports.createComment = async (req, res) => {
+//   try {
+//     const { comment } = req.body;
+//     const blogId = req.params.blogId;
 
-    const blog = await Blog.findById(blogId);
-    if (!blog) return res.status(404).json({ message: "Blog not found" });
+//     const blog = await Blog.findById(blogId);
+//     if (!blog) return res.status(404).json({ message: "Blog not found" });
 
-    // Add comment
-    const newComment = { comment };
-    blog.comments.push(newComment);
+//     // Add comment
+//     const newComment = { comment };
+//     blog.comments.push(newComment);
 
-    await blog.save();
-    res.status(201).json({ message: "Comment added successfully", blog });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+//     await blog.save();
+//     res.status(201).json({ message: "Comment added successfully", blog });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
