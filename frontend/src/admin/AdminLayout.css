@@ -1,0 +1,12 @@
+/* Sidebar is fixed */
+.sidebar {
+  width: 220px;
+  position: fixed;
+  height: 100vh;
+}
+
+/* Content gets pushed to the right */
+.admin-content {
+  margin-left: 220px;
+  padding: 20px;
+}
