@@ -1,12 +1,21 @@
 import './App.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-
-      <h1>Tekit Labs Website</h1>
+        <Navbar />
       </header>
+      <main>
+        <HomePage />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
