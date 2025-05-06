@@ -3,17 +3,19 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
-dotenv.config(); // Load environment variables
+dotenv.config(); 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Import blog routes
+//Import routes
 const blogRoutes = require("./routes/blogRoutes");
+const adminRoutes = require('./routes/adminRoutes')
 
-// ✅ Use blog routes
-app.use("/blogs", blogRoutes);
+//Use routes
+app.use("/api/blogs", blogRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Connect to MongoDB
 mongoose
