@@ -1,41 +1,60 @@
 import React from 'react';
 import './HomePage.css';
+import rightArrow from '../assets/right_btn.svg'; 
 
 
 function HomePage() {
-    return(
-        <div className="home-page">
-        <section className="hero">
-            <div className="hero-content">
-            <h1>Welcome to Tekit Labs</h1>
-            <p>Innovative solutions for your technological needs</p>
-            <button className="cta-button">Learn More</button>
+    return (
+          <div className="hero-section">
+            <p className="hero-headline main-white">Innovating <span className='main-green'>Businesses</span> with Tailored <span className='main-green'>Digital Solutions</span></p>
+            <div className="hero-description">
+              <p className="description-text">
+                From Concept To Completion, We Build Digital Experiences That
+                Drive Success
+              </p>
+              <div className="cta-container">
+                <div className="cta-secondary">
+                  <div className="cta-secondary-text">Explore Our Services</div>
+                </div>
+                <div className="cta-primary">
+                  <div className="cta-primary-text">Book A Meeting</div>
+                  <div className="cta-icon-container">
+                    <img
+                      className="cta-icon"
+                      src={rightArrow}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-
-        <section className="services">
-            <h2>Our Services</h2>
-            <div className="services-grid">
-            <div className="service-card">
-                <h3>Web Development</h3>
-                <p>Custom web solutions tailored to your business needs</p>
+            <div className="service-tags">
+              <div className="service-tag">
+                <div className="service-tag-text">Web development services</div>
+              </div>
+              <div className="service-tag">
+                <div className="service-tag-text">Software development</div>
+              </div>
+              <div className="service-tag">
+                <div className="service-tag-text">UI/UX design</div>
+              </div>
+              <div className="service-tag">
+                <div className="service-tag-text">Digital marketing assets</div>
+              </div>
+              <div className="service-tag">
+                <div className="service-tag-text">
+                  Consultation &amp; Support
+                </div>
+              </div>
             </div>
-            <div className="service-card">
-                <h3>Mobile Development</h3>
-                <p>Native and cross-platform mobile applications</p>
+            <div className="scroll-indicator-container">
+              <div className="scroll-indicator">SCROLL DOWN</div>
+              <div className="scroll-icon">
+                <div className="scroll-arrow"></div>
+                <div className="scroll-arrow"></div>
+                <div className="scroll-arrow"></div>
+              </div>
             </div>
-            <div className="service-card">
-                <h3>UI/UX Design</h3>
-                <p>User-centered designs that enhance user experience</p>
-            </div>
-            </div>
-        </section>
-
-        <section className="about">
-            <h2>About Us</h2>
-            <p>Tekit Labs is a technology company specializing in innovative solutions for businesses of all sizes.</p>
-        </section>
-        </div>
+          </div>
     );
 }
 
