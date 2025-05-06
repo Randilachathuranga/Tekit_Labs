@@ -1,7 +1,7 @@
 .App {
     font-family: 'Poppins', sans-serif;
-    /* background-color: #0A0A0A; */
-    padding-top: 70px; /* Increased padding to account for fixed navbar height */
+    background-color: #0A0A0A;
+    padding-top: 90px; /* Increased padding to account for fixed navbar height */
   }
   
   main {
@@ -9,7 +9,7 @@
   }
   
   /* Header styles for navbar container */
-  .App-header {
+  /* .App-header {
     width: 100%;
     position: relative;
-  }
+  } */
