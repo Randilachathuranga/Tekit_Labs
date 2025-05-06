@@ -1,29 +1,77 @@
 .navbar {
+    height: 50px;
+    width: 100%;
+    max-width: 1186px;
+    color: white;
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #333;
-    color: white;
+    position: fixed; /* Change from sticky to fixed */
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the navbar */
+    z-index: 1000;
+    margin: 0 auto;    
+    background-color: #0A0A0A;
+    backdrop-filter: blur(10px);
+    padding: 5px 20px; 
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
   
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  .logo img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
   }
   
   .nav-links {
-    display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    display: inline-flex;
+    gap: 57px;
+    position: relative;
   }
   
   .nav-links li {
-    margin-left: 1.5rem;
-    cursor: pointer;
+    color: #9e9e9e;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+  }
+
+  .nav-links li.selected {
+    color: #fff;
   }
   
   .nav-links li:hover {
-    color: #61dafb;
+    color: #fff;
   }
+
+  .book-btn {
+    align-items: center;
+    background-color: #c6ff0f;
+    border-radius: 16px;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.book-btn .book-text {
+    color: #0a0a0a;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
