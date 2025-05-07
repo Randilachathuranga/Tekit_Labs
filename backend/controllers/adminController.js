@@ -10,7 +10,11 @@ const loginAdmin = async (req, res) => {
   const isMatch = await admin.matchPassword(password);
   if (!isMatch) return res.status(401).json({ message: 'Invalid email or password' });
 
-  const token = jwt.sign({ id: admin._id }, 'yourSecretKey', { expiresIn: '1d' });
+  const token = jwt.sign(
+    { id: admin._id, role: 'admin' }, 
+    process.env.JWT_SECRET,
+    { expiresIn: '1d' }
+  );
 
   res.json({
     _id: admin._id,

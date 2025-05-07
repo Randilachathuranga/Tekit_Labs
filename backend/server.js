@@ -16,6 +16,7 @@ const adminRoutes = require('./routes/adminRoutes')
 //Use routes
 app.use("/api/blogs", blogRoutes);
 app.use('/api/admin', adminRoutes);
+app.use("/uploads", express.static("uploads"));
 
 // Connect to MongoDB
 mongoose

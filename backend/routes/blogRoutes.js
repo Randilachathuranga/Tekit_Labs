@@ -1,12 +1,14 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const blogController = require("../controllers/blogController");
+const blogController = require('../controllers/blogController');
+const { protect: verifyToken } = require('../middlewares/authMiddleware');
+const isAdmin = require('../middlewares/isAdmin'); 
+const upload = require('../middlewares/upload');
 
-router.post("/create", blogController.createBlog); //http://localhost:5000/blogs/create
-router.get("/getall", blogController.getAllBlogs); //http://localhost:5000/blogs/getall
-router.get("/getbyid/:id", blogController.getBlogById); //http://localhost:5000/blogs/getbyid/:id
-router.put("/update/:id", blogController.updateBlog); //http://localhost:5000/blogs/update/:id
-router.put("/softdelete/:id", blogController.softDeleteBlog); //http://localhost:5000/blogs/softdelete/:id
-router.delete("/permanent-delete/:id", blogController.permanentDeleteBlog); //http://localhost:5000/blogs/permanent-delete/:id
+router.post('/', verifyToken, isAdmin, upload.array('images'), blogController.createBlog);
+router.get('/', blogController.getAllBlogs);
+router.get('/:id', blogController.getBlogById);
+router.put('/:id', verifyToken, isAdmin, blogController.updateBlog);
+router.delete('/:id', verifyToken, isAdmin, blogController.deleteBlog);
 
 module.exports = router;
