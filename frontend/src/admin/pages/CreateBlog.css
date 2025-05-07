@@ -1,48 +1,251 @@
-.create-blog-container {
-  padding: 40px 30px;
-  font-family: sans-serif;
+/* BlogEditor.css */
+.blog-editor-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-h2 {
+.editor-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #242424;
+}
+
+.error-message {
+  background-color: #ffeaea;
+  color: #d32f2f;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Cover Image Styles */
+.cover-image-container {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.cover-upload {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cover-upload:hover {
+  border-color: #1a8917;
+  background-color: #f0f0f0;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #757575;
+}
+
+.upload-placeholder i {
+  font-size: 40px;
+}
+
+.upload-placeholder span {
+  font-size: 16px;
+}
+
+.cover-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cover-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-cover {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.remove-cover:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Title Input */
+.title-container {
   margin-bottom: 20px;
 }
 
-.form-group {
-  margin-bottom: 25px;
+.title-input {
+  width: 100%;
+  font-size: 36px;
+  font-weight: 700;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-label {
+.title-input::placeholder {
+  color: #b3b3b3;
+}
+
+/* Rich Text Editor */
+.editor-container {
+  margin-bottom: 30px;
+}
+
+.ql-editor {
+  min-height: 350px;
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.ql-toolbar {
+  border-radius: 4px 4px 0 0;
+  background-color: #f9f9f9;
+}
+
+.ql-container {
+  border-radius: 0 0 4px 4px;
+  font-size: 18px;
+}
+
+/* Category Selection */
+.category-container {
+  margin-bottom: 20px;
+}
+
+.category-container label {
   display: block;
   margin-bottom: 8px;
-  font-weight: bold;
+  font-weight: 600;
+  color: #333;
 }
 
-.input-field,
-.textarea-field {
+.category-container select {
   width: 100%;
-  background-color: #d9d9d9;
-  border: none;
-  border-radius: 10px;
-  padding: 12px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
   font-size: 16px;
-  resize: none;
+  background-color: white;
 }
 
-.textarea-field {
-  height: 220px;
+/* Tags Input */
+.tags-container {
+  margin-bottom: 30px;
+}
+
+.tags-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.tags-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.tag-remove {
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+  min-width: 120px;
+}
+
+/* Submit Button */
+.button-container {
+  text-align: right;
 }
 
 .publish-button {
-  background-color: #90ee90;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 25px;
+  background-color: #1a8917;
+  color: white;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  float: right;
+  transition: background-color 0.2s;
 }
 
 .publish-button:hover {
-  background-color: #6fda6f;
+  background-color: #0f6e0c;
+}
+
+.publish-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cover-image-container {
+    height: 200px;
+  }
+  
+  .title-input {
+    font-size: 28px;
+  }
+  
+  .ql-editor {
+    min-height: 250px;
+  }
 }
