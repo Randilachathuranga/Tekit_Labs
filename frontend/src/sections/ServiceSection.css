@@ -1,0 +1,95 @@
+.service-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 24px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.service-header-text{
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-top: 100px;
+}
+
+.service-header-description{
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    width: 1039px;
+    margin-top: 12px;
+}
+
+.service-details-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1203px;
+    height: 572px;
+    flex-shrink: 0; /* Uncommenting this line */
+    background-color: #000;
+    border-radius: 30px;
+    padding: 0px 80px; /* Added padding */
+    margin: 52px auto;
+    box-sizing: border-box; /* Added box-sizing property */
+}
+
+.our-services-text{
+    color: #FFF;
+/* text-align: center; */
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: capitalize;
+padding: 40px 80px 0px 80px;
+}
+
+.service-details{
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 60px;
+    padding: 0px 80px;
+    width: auto; /* Changed from 100% to auto */
+    height: auto;
+    box-sizing: border-box; /* Added box-sizing property */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+}
+
+.service-detail-group{
+    max-width: 310px;
+    width: 100%;
+}
+
+.service-type{
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.service-description{
+    color: #989898;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-top: 40px;
+}
